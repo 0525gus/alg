@@ -1,3 +1,4 @@
+#https://www.acmicpc.net/problem/10816
 import sys
 
 N = int(sys.stdin.readline())
@@ -14,7 +15,13 @@ for j in N_li:
     if j in mydict:
         mydict[j] += 1
 
+
+
+
+#print
 # print(*mydict.values())
 
-for i in M_li:
-    print(mydict[i],end=" ")
+# for i in M_li:
+#     print(mydict[i],end=" ")
+
+print(*[mydict[i] for i in M_li])
