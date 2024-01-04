@@ -14,24 +14,23 @@ def round(n):
 
 
 #NMSUM -> 모든 블럭의 합
-NMSUM = 0;
+NMSUM = 0
 for i in range(N):
     temp_a = [j for j in map(int,input().split())]
     #temp_a = > 모두의 어레이
     NMSUM += sum(temp_a)
     NMLi.append(temp_a)
 
-#평탄화 기준점 계산 (어느 평탄화 지점이 가장 높은가 ?(답이 많다면) )
+#평탄화 기준점 계산 위해 모든 블럭을 합한뒤 영역 갯수로 나눔-> 정수로 표현위해 반올림
 fastBlock = round(NMSUM / (N*M))
 
-#필요한 블럭수 계산
-needBlockNum = 0;
-
+#평탄화 기준점에 따른 필요한 블럭수 계산
+needBlockNum = 0
 for i in NMLi:
     for j in i:
         needBlockNum += abs(j-fastBlock)
 
-
-if(needBlockNum>B):
-    #
-else:
+for i in NMLi:
+    for j in i:
+        while needBlockNum < j:
+            
